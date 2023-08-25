@@ -7,3 +7,7 @@
 ## To start the project, use this command:
 
 ``docker-compose up --build``
+
+## Here is the API documentation:
+
+[localhost/swagger](localhost/swagger)
