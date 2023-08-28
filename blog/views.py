@@ -8,10 +8,12 @@ from .filters import LikeFilter
 from .mixins import LikedMixin
 from .models import Post, Like
 from .serializers import PostSerializer, LikeByDaySerializer
+from accounts.pagination import CustomPageNumberPagination
 
 
 class PostViewSet(LikedMixin, viewsets.ModelViewSet):
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
+    pagination_class = CustomPageNumberPagination
     serializer_class = PostSerializer
     queryset = Post.objects.all()
 

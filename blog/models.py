@@ -33,7 +33,7 @@ class Like(models.Model):
 class Post(TimeStampModel):
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='posts')
     title = models.CharField(max_length=255, verbose_name='Title')
-    image = models.ImageField(upload_to='posts-photos/')
+    image = models.CharField(max_length=500)
     description = models.TextField()
     likes = GenericRelation(Like)
 
